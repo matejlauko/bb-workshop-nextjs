@@ -1,0 +1,21 @@
+{
+  "name": "nextjs-blogisek",
+  "version": "0.0.1",
+  "author": "Matej Lauko <lauko.m@gmail.com>",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "static-export": "next build && next export"
+  },
+  "license": "WTFPL",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "cowsay-browser": "^1.1.8",
+    "es6-promise": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1",
+    "next": "^3.0.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
