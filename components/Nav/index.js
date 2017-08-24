@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 const styles = {
   nav: {
     marginTop: '1rem',
@@ -17,25 +15,17 @@ const Nav = () =>
   <nav style={styles.nav}>
     <ul style={styles.list}>
       <li>
-        <Link href="/list">
-          <a style={styles.link}>Home</a>
-        </Link>
+        <a style={styles.link}>Home</a>
       </li>
 
       <li>
-        <Link href={{ pathname: '/list', query: { category: 'cars' } }} prefetch>
-          <a style={styles.link}>Cars</a>
-        </Link>
+        <a style={styles.link}>Cars</a>
       </li>
       <li>
-        <Link href={{ pathname: '/list', query: { category: 'it' } }} prefetch>
-          <a style={styles.link}>IT</a>
-        </Link>
+        <a style={styles.link}>IT</a>
       </li>
       <li>
-        <Link href={{ pathname: '/list', query: { category: 'xxx' } }} prefetch>
-          <a style={styles.link}>XXX</a>
-        </Link>
+        <a style={styles.link}>XXX</a>
       </li>
     </ul>
   </nav>;

@@ -1,5 +1,4 @@
 import { Component } from 'react';
-const cowsayPromise = import('cowsay-browser');
 
 const styles = {
   comments: {
@@ -14,36 +13,12 @@ const styles = {
   },
 };
 
-class Comment extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.CommentDisplay = (
-      <p>
-        {this.props.comment.text}
-      </p>
-    );
-  }
-
-  render() {
-    setTimeout(() => {
-      cowsayPromise.then(cowsay => {
-        this.CommentDisplay = (
-          <div>
-            {cowsay.say({ text: this.props.comment.text })}
-          </div>
-        );
-        this.forceUpdate();
-      });
-    }, 5000);
-
-    return (
-      <li style={styles.comment}>
-        {this.CommentDisplay}
-      </li>
-    );
-  }
-}
+const Comment = ({ comment }) =>
+  <li style={styles.comment}>
+    <p>
+      {comment.text}
+    </p>
+  </li>;
 
 const Comments = ({ comments }) =>
   <aside style={styles.comments}>

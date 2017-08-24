@@ -1,9 +1,6 @@
 import { Component } from 'react';
-import dynamic from 'next/dynamic';
 import Layout from '../../styling/Layout';
-import { getArticle } from '../../api';
-
-const DynamicComments = dynamic(import('./Comments'), { ssr: false, loading: () => <p>Lading Comments...</p> });
+import Comments from './Comments';
 
 const styles = {
   article: {
@@ -19,12 +16,6 @@ const styles = {
 };
 
 export default class Article extends Component {
-  static async getInitialProps({ query }) {
-    const article = await getArticle({ id: query.id });
-
-    return { article };
-  }
-
   render() {
     const { article } = this.props;
 
@@ -38,7 +29,7 @@ export default class Article extends Component {
             {article.text}
           </p>
 
-          {article.comments && <DynamicComments comments={article.comments} />}
+          {article.comments && <Comments comments={article.comments} />}
         </article>;
       </Layout>
     );
