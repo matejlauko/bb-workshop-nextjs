@@ -15,10 +15,7 @@ app.prepare().then(() => {
       const pathSplit = pathname.split('/');
       const id = pathSplit[pathSplit.length - 1];
 
-      app.render(req, res, '/article', {
-        ...query,
-        id,
-      });
+      app.render(req, res, '/article', Object.assign({}, query, { id }));
     } else {
       handle(req, res, parsedUrl);
     }
